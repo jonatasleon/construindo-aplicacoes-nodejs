@@ -1,0 +1,1 @@
+process.argv.map(arg => console.log((arg != 42) ? arg : "THE ANSWER!"));
