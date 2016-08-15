@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/jonatasleon/construindo-aplicacoes-nodejs/issues"
   },
-  "homepage": "https://github.com/jonatasleon/construindo-aplicacoes-nodejs#readme"
+  "homepage": "https://github.com/jonatasleon/construindo-aplicacoes-nodejs#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
