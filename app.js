@@ -11,3 +11,7 @@ app.use(function(req, res, next) {
 app.get('/', function(req, res) {
   res.send('Hello');
 });
+
+app.post('/', function(req, res) {
+  res.json({msg: "RETORNO DE UM POST"});
+});
