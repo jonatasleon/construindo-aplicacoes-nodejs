@@ -3,8 +3,11 @@
 const express = require('express');
 const app = express();
 
+let counter = 0;
+
 app.use(function(req, res, next) {
-  console.log('Isso é um middleware');
+  counter += 1;
+  console.log('Isso é um middleware', counter);
   next();
 });
 
@@ -14,4 +17,8 @@ app.get('/', function(req, res) {
 
 app.post('/', function(req, res) {
   res.json({msg: "RETORNO DE UM POST"});
+});
+
+app.listen(3000, () => {
+  console.log('Magic are happening at port 3000');
 });
