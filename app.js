@@ -19,6 +19,10 @@ app.post('/', function(req, res) {
   res.json({msg: "RETORNO DE UM POST"});
 });
 
+app.get('/resources', function(req, res) {
+  res.json([{msg: "GET ROSOURCES"}]);
+});
+
 app.listen(3000, () => {
   console.log('Magic are happening at port 3000');
 });
