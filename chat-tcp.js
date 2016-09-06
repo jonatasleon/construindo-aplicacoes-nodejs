@@ -17,12 +17,12 @@ var broadcast = function(message, sender) {
 
 chatServer.on('connection', function(client) {
   client.write('Hi guest!\n');
-  clientList.push(client); 
+  clientList.push(client);
   client.on('data', function(data) {
     broadcast(data, client);
   });
   client.on('error', function(err) {
-    console.log(err);
+    console.error(err);
   });
   client.on('end', removeClient);
 });
