@@ -2,11 +2,11 @@
   "name": "construindo-aplicacoes-nodejs",
   "version": "1.0.0",
   "description": "Livro Construindo Aplicações com NodeJS",
-  "main": "index.js",
+  "main": "./bin/www",
   "scripts": {
-    "start": "node app.js",
+    "start": "node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "nodemon": "DEBUG=my-app:* nodemon app.js"
+    "nodemon": "DEBUG=my-app:* nodemon ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -23,8 +23,10 @@
   },
   "homepage": "https://github.com/jonatasleon/construindo-aplicacoes-nodejs#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "gulp": "^3.9.1",
-    "gulp-eslint": "^3.0.1"
+    "gulp-eslint": "^3.0.1",
+    "method-override": "^2.3.6"
   }
 }
