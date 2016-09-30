@@ -10,8 +10,9 @@ var removeClient = function(data) {
 
 var broadcast = function(message, sender) {
   clientList.forEach(function(client) {
-    if (sender !== client)
+    if (sender !== client) {
       client.write(message);
+    }
   });
 };
 
