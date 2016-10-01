@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "nodemon": "DEBUG=my-app:* nodemon ./bin/www",
+    "nodemon": "DEBUG=livro_nodejs:* nodemon ./bin/www",
     "lint": "eslint **/*.js *.js",
     "lint:fix": "eslint **/*.js *.js --fix"
   },
