@@ -6,9 +6,11 @@
   "scripts": {
     "start": "node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "nodemon": "DEBUG=my-app:* nodemon ./bin/www"
+    "nodemon": "DEBUG=my-app:* nodemon ./bin/www",
+    "lint": "eslint **/*.js *.js",
+    "lint:fix": "eslint **/*.js *.js --fix"
   },
-  "repository": {
+    "repository": {
     "type": "git",
     "url": "git+https://github.com/jonatasleon/construindo-aplicacoes-nodejs.git"
   },
