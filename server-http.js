@@ -10,10 +10,10 @@ var routes = function(url) {
   };
 
   return pathPairs[url] || pathPairs['/404'];
-}
+};
 
 var server = http.createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.writeHead(200, {'Content-Type': 'text/plain'});
   res.end(routes(req.url));
 });
 

@@ -1,6 +1,6 @@
 'use strict';
 
-function StormtrooperController() {};
+function StormtrooperController() {}
 
 StormtrooperController.prototype.getAll = (req, res) => {
   res.send('get all stormtroopers');

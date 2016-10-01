@@ -15,13 +15,13 @@ app.use(methodOverride('X-Method-Override'));
 app.use(methodOverride('_method'));
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use((req, res, next) => {
   if (req.url === '/favicon.ico') {
-    res.writeHead(200, { 'Content-Type': 'image/x-icon' });
+    res.writeHead(200, {'Content-Type': 'image/x-icon'});
     res.end('');
   } else {
     next();
@@ -44,7 +44,7 @@ app.use((req, res, next) => {
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(err.status || 500).json({ err: err.message });
+  res.status(err.status || 500).json({err: err.message});
 });
 
 module.exports = app;

@@ -1,7 +1,7 @@
 /**
  * loremipsum.js
  *
- * Faz uma requisição na api `http://loripsum.net/api` e 
+ * Faz uma requisição na api `http://loripsum.net/api` e
  * cria um arquivo com o nome e a quantidade de parágrafos
  * especificados
  *
@@ -18,16 +18,19 @@ let numberParagraphs = String(process.argv[3] || '').replace(/[^\d]/g, '');
 
 const USAGE = 'USO: node loremipsum {fileName} {numberParagraphs}';
 
-if (!fileName || !numberParagraphs)
+if (!fileName || !numberParagraphs) {
   return console.log(USAGE);
+}
 
 http
   .get('http://loripsum.net/api/' + numberParagraphs, function(res) {
     let text = '';
 
     res.on('data', chunk => text += chunk);
-    res.on('end', () => 
-      fs.writeFile(fileName, text, () => console.log(`Arquivo ${fileName} pronto!`))
-    );
+    res.on('end', () => {
+      fs.writeFile(fileName, text, () => {
+        console.log(`Arquivo ${fileName} pronto!`);
+      });
+    });
   })
   .on('error', e => console.log('Got error: ' + e.message));
