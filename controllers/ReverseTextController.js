@@ -1,6 +1,6 @@
 'use strict';
 
-const rev = require('../reverse_text');
+const rev = require('../helpers/reverse_text');
 
 function ReverseTextController() {}
 
