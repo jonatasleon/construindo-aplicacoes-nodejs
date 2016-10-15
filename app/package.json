@@ -5,8 +5,8 @@
   "main": "./bin/www",
   "scripts": {
     "start": "DEBUG=livro_nodejs:* node ./bin/www",
+    "dev": "DEBUG=livro_nodejs:* nodemon ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "nodemon": "DEBUG=livro_nodejs:* nodemon ./bin/www",
     "lint": "eslint **/*.js *.js",
     "lint:fix": "eslint **/*.js *.js --fix"
   },
@@ -31,6 +31,7 @@
     "gulp": "^3.9.1",
     "gulp-eslint": "^3.0.1",
     "method-override": "^2.3.6",
-    "mongojs": "^2.4.0"
+    "mongojs": "^2.4.0",
+    "nodemon": "^1.11.0"
   }
 }
