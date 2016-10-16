@@ -1,3 +1,5 @@
+import { Types } from 'mongoose';
+
 const stormtrooperSchema = (mongoose) => {
   return mongoose.model('Stormtrooper', {
     name: String,
@@ -24,17 +26,17 @@ export default class StormtropperModel {
   }
 
   findOne(_id, callback) {
-    let query = { _id: _id };
+    let query = { _id };
     this.model.findOne(query).exec(callback);
   }
 
   update(_id, data, callback) {
-    let query = { _id: _id };
+    let query = { _id };
     this.model.update(query, data).exec(callback);
   }
 
   remove(_id, callback) {
-    let query = {_id: this.mongo.ObjectId(_id)};
+    let query = { _id };
     this.model.remove(query).exec(callback);
   }
 

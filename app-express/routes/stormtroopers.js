@@ -1,14 +1,16 @@
 import { Router } from 'express';
+import passport from 'passport';
 import mongo from '../db/mongoose';
 import StormtrooperModel from '../models/StormtrooperModel';
 import StormtrooperController from '../controllers/StormtrooperController';
+import { handleNotFound, auth } from './helpers';
 
 const stormtrooperModel = new StormtrooperModel(mongo);
 const stormtrooperController = new StormtrooperController(stormtrooperModel);
 
 const router = new Router();
 
-router.get('/', (req, res) => {
+router.get('/', passport.authenticate('basic', { session: false }), (req, res) => {
   stormtrooperController.getAll()
     .then((response) => {
       res.status(response.statusCode);
@@ -16,9 +18,11 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', auth, (req, res) => {
   stormtrooperController.getById(req.params.id)
+    .then(handleNotFound)
     .then((response) => {
+      console.log(response);
       res.status(response.statusCode);
       res.json(response.data);
     });

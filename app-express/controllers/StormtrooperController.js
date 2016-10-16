@@ -13,7 +13,6 @@ const errorReponse = (message, statusCode = HttpStatus.BAD_REQUEST) => defaultRe
 export default class StormtrooperController {
   constructor(StormtrooperModel) {
     this.model = Promise.promisifyAll(StormtrooperModel);
-
   }
 
   getAll() {

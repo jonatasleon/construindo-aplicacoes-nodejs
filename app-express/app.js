@@ -6,6 +6,8 @@ import favicon from 'serve-favicon';
 import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
+import passport from 'passport';
+import { BasicStrategy } from 'passport-http';
 
 import routes from './routes/index';
 import users from './routes/users';
@@ -23,6 +25,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(passport.initialize());
+passport.use(
+  new BasicStrategy((username, password, done) => {
+    let infoIsValid = (username.valueOf() === 'rebels' && password.valueOf() === '1138');
+    return done(null, infoIsValid);
+  })
+);
 
 app.use('/', routes);
 app.use('/users', users);
