@@ -6,6 +6,11 @@ import stormtrooperRoutes from './stormtroopers';
 
 const router = Router();
 
+router.get('/', (req, res) => {
+  res.render('index', {
+    title: 'Construindo aplicações com Node.js'
+  });
+})
 router.post('/login', (req, res, next) => {
   let username = req.body.username;
   let password = req.body.password;
