@@ -2,4 +2,4 @@
 Livro Construindo Aplicações com NodeJS
 
 
-- [ ] Aplicação com Sequelize
+- [x] Aplicação com Sequelize
